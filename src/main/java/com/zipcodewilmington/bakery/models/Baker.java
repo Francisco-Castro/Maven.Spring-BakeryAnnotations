@@ -1,9 +1,20 @@
 package com.zipcodewilmington.bakery.models;
 
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
+/**
+ *  Entity - Annotates class signature.
+ *  Allows th persistence provider to recognize it as a persistence class.
+ *  Entities are said to be fungible, or mutually interchangeable.
+ */
+@Entity
 public class Baker {
+
+    @Id
     private Long id;
 
     private String name;
