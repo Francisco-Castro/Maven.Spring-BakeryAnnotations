@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
+//@CrossOrigin("192.127.XXX")
+//@CrossOrigin("4200")
 public class MuffinController {
     private MuffinService service;
 
@@ -23,22 +25,22 @@ public class MuffinController {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
 
-    @GetMapping("/muffins/{id}")
+//    @GetMapping("/muffins/{id}")
     public ResponseEntity<Muffin> show(@PathVariable Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
 
-    @PostMapping("/muffins/")
+//    @PostMapping("/muffins/")
     public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
 
-    @PutMapping("/muffins/{id, baker}")
+//    @PutMapping("/muffins/{id, baker}")
     public ResponseEntity<Muffin> update(@PathVariable Long id, @RequestBody Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
 
-    @DeleteMapping("/muffins/{id}")
+//    @DeleteMapping("/muffins/{id}")
     public ResponseEntity<Boolean> destroy(@PathVariable Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }
